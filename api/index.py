@@ -13,12 +13,20 @@ from fastapi.responses import FileResponse
 from pathlib import Path
 from pydantic import BaseModel
 
-from .prompts import (
-    CATEGORY_CONTEXT,
-    build_code_roast_prompt,
-    build_roast_prompt,
-    build_system_prompt,
-)
+try:
+    from .prompts import (
+        CATEGORY_CONTEXT,
+        build_code_roast_prompt,
+        build_roast_prompt,
+        build_system_prompt,
+    )
+except ImportError:
+    from prompts import (  # type: ignore[no-redef]
+        CATEGORY_CONTEXT,
+        build_code_roast_prompt,
+        build_roast_prompt,
+        build_system_prompt,
+    )
 
 app = FastAPI(title="RoastAPI", version="1.0.0", docs_url="/api/docs", redoc_url=None)
 
