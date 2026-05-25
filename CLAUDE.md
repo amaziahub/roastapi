@@ -27,5 +27,23 @@ Decisions and context from the design phase are captured here.
 - `/roast/code` is the killer feature — defaults to senior_dev + savage
 - damage_rating is random float 6.0–9.9 (purely for fun)
 
-## Repo
-github.com/amaziagur/roastapi
+## Client ecosystem — decided, in progress
+Target users are developers who live in the terminal, CI/CD, and Slack.
+Building clients to meet them there, each in its own repo:
+
+| Repo | Status |
+|------|--------|
+| `amaziahub/roastapi` | Live — the API |
+| `amaziahub/roastapi-python` | In progress — Python SDK + CLI |
+| `amaziahub/roastapi-node` | Planned — Node/TypeScript SDK |
+| `amaziahub/roastapi-action` | Planned — GitHub Action |
+
+**Python SDK + CLI** ships together in one repo (CLI is a thin wrapper on the SDK).
+**Node SDK** and **GitHub Action** are separate repos with separate versioning.
+Slack/Teams bots come after the SDKs are published.
+
+## Repos
+- API: github.com/amaziahub/roastapi
+- Python SDK + CLI: github.com/amaziahub/roastapi-python (in progress)
+- Node SDK: github.com/amaziahub/roastapi-node (planned)
+- GitHub Action: github.com/amaziahub/roastapi-action (planned)
